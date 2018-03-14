@@ -1,0 +1,34 @@
+[all:vars]
+
+###########################################################################
+### Ansible Vars
+###########################################################################
+timeout=60
+ansible_become=yes
+ansible_ssh_user=ec2-user
+ansible_ssh_private_key_file="./.ssh/7b3akey.pem"
+ansible_ssh_common_args="-o StrictHostKeyChecking=no"
+
+
+[frontends]
+## These are the frontends
+frontend1.7b3a.internal ansible_ssh_host=frontend1.7b3a.example.opentlc.com
+
+[apps]
+### These are the apps
+app1.7b3a.internal ansible_ssh_host=app1.7b3a.example.opentlc.com
+app2.7b3a.internal ansible_ssh_host=app2.7b3a.example.opentlc.com
+
+[appdbs]
+### These are the appdbs
+appdb1.7b3a.internal ansible_ssh_host=appdb1.7b3a.example.opentlc.com
+
+### These are the support
+[support]
+support1.7b3a.internal ansible_ssh_host=support1.7b3a.example.opentlc.com
+
+
+[jumpbox]
+aws_bastion ansible_ssh_host=bastion.7b3a.example.opentlc.com
+
+
