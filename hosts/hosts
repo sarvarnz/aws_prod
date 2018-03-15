@@ -29,6 +29,6 @@ support1.7b3a.internal ansible_ssh_host=support1.7b3a.example.opentlc.com
 
 
 [jumpbox]
-aws_bastion ansible_ssh_host=bastion.7b3a.example.opentlc.com
+bastion.7b3a.example.opentlc.com ansible_ssh_host=bastion.7b3a.example.opentlc.com
 
 
