@@ -26,7 +26,7 @@ backend app-servers
     balance roundrobin
     option forwardfor
 {% for host in groups['apps'] %}
-    server app{{ loop.index }} app{{ loop.index }}:8080 cookie app{{ loop.index }} check
+    server app{{ loop.index }}.7b3a.internal app{{ loop.index }}.7b3a.internal:8080 cookie app{{ loop.index }} check
 {% endfor %}
 
 #    server app1 app1:8080 cookie app1 check
