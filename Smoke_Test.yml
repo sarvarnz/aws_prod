@@ -2,7 +2,7 @@
   gather_facts: False
   name: Smoke Test for the Services Running Under Prod Environment
   tasks: 
-   - action: uri url=http://frontend return_content=yes
+   - action: uri url=http://frontend1.7b3a.internal return_content=yes
      register: webpage
    - fail: msg='There some issue with Prod Environment'
      when: "'Ansible has done its job' not in webpage.content"
